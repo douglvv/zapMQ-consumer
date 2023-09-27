@@ -38,8 +38,11 @@ function consumeQueue() {
           try {
             const message = JSON.parse(msg.content.toString());
             receivedMessages.push(message);
-            console.log('Mensagem recebida: ', message);
+
+            console.log('Mensagem recebida: ', msg.content.toString());
             console.log('Array de mensagens: ', receivedMessages);
+
+            // avisa que recebeu a mensagem e remove da fila
             channel.ack(msg);
           } catch (error) {
             console.error('Erro ao processar mensagem:', error);
