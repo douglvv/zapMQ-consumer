@@ -56,7 +56,6 @@ function consumeQueue() {
   });
 }
 
-// Call consumeQueue before starting the HTTP server
 consumeQueue();
 
 app.get('/mensagens', (req, res) => {
